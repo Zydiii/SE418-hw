@@ -1,2 +1,3 @@
-dictionary.class
 com\test\mooc\maven\App.class
+com\test\mooc\maven\WordLadder.class
+com\test\mooc\maven\Dictionary.class
