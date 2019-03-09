@@ -14,7 +14,7 @@ public class Dictionary {
 		BufferedReader br = null;
 		Set<String> hashSet = new HashSet<String>();
 		try {
-			fis = new FileInputStream("D:/dictionary.txt"); 
+			fis = new FileInputStream("src/main/java/com/test/mooc/maven/dictionary.txt"); 
 			isr = new InputStreamReader(fis, "UTF-8"); 
 			br = new BufferedReader(isr); 
 			String line;

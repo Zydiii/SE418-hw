@@ -35,7 +35,7 @@ public class WordLadder{
 						ladder.offer(_new);
 						pre_words.add(change_word);
 					}
-					if (change_word.contentEquals(word2))
+					if (change_word.equals(word2))
 					{
 						while(ladder.size() > 1) {
 							ladder.poll();
