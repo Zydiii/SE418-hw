@@ -19,8 +19,7 @@ public class WordLadder{
 		int len = word1.length();
 		while (true)
 		{
-			Stack<String> _last = ladder.peek();
-			ladder.poll();
+			Stack<String> _last = ladder.poll();
 			String pre = _last.peek();
 			for (int i = 0; i < len; i++)
 			{
@@ -31,21 +30,23 @@ public class WordLadder{
 					change_word = new_word;
 					if (Dictionary.check(change_word, dic)==1 && Dictionary.check(change_word, pre_words)==0)
 					{
-						Stack<String> _new = _last;
+						Stack<String> _new = (Stack<String>) _last.clone();
 						_new.push(change_word);
 						ladder.offer(_new);
 						pre_words.add(change_word);
 					}
-					if (change_word == word2)
+					if (change_word.contentEquals(word2))
 					{
 						while(ladder.size() > 1) {
 							ladder.poll();
 						}
 						words = ladder.peek();
+						return words;
 					}
 				}
 			}
-			return words;
+			if (ladder.size() == 0)
+				return words;
 	 }
    }
 }
