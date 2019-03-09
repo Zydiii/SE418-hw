@@ -11,8 +11,8 @@ public class OutPut{
 			 String s;
 			 for(int i =0; i < len - 1; i++) {
 		        	s = words.pop();
-		        	System.out.println(s);
-		        	System.out.println("  =>  ");
+		        	System.out.print(s);
+		        	System.out.print("  =>  ");
 		        }
 			s = words.pop();
 	        System.out.println(s);

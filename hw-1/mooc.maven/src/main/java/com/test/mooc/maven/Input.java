@@ -18,23 +18,9 @@ public class Input{
 	        }
 	        Words wor = new Words();
 	        while (true) {
-	        	wor = InputWord.getword(dic);		
-				if (Dictionary.check(wor.word1, dic) == 0  && Dictionary.check(wor.word2, dic) == 0 ) {
-					System.out.println("Sorry, word1 and word2 doesn't exist in the dictionary.\n");
-					System.out.println("Please try again.\n");
-					continue;
-				}
-				else if (Dictionary.check(wor.word1, dic) == 0) {
-					System.out.println("Sorry, word1 doesn't exist in the dictionary.");
-					System.out.println("Please try again.\n");
-					continue;
-				}
-				else if (Dictionary.check(wor.word2, dic) == 0) {
-					System.out.println("Sorry, word2 doesn't exist in the dictionary.");
-					System.out.println("Please try again.\n");
-					continue;
-				}
-				else 
+	        	wor = InputWord.getword(dic);	
+				int a = InputCheck.wordcheck(wor.word1, wor.word2);
+				if(a == 1)
 					break;
 	        }
 	        WordLadder lad = new WordLadder();

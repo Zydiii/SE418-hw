@@ -10,8 +10,9 @@ public class InputWord{
         String word1 = sc.nextLine(); 
 		word1.toLowerCase();
 		while (Dictionary.check(word1, dic) == 0) {
-			System.out.println("Invalid Word"); 
-			System.out.println("Word #1:  "); 
+			System.out.print("Sorry, word1 doesn't exist in the dictionary. ");
+			System.out.println("Please try again.");
+			System.out.print("Word #1:  "); 
 			word1 = sc.nextLine();		
 			word1.toLowerCase();
 		}
@@ -20,8 +21,9 @@ public class InputWord{
 		String word2 = sc.nextLine(); 
 		word2.toLowerCase();
 		while (Dictionary.check(word2, dic) == 0) {
-			System.out.println("Invalid Word"); 
-			System.out.println("Word #2:  "); 
+			System.out.print("Sorry, word2 doesn't exist in the dictionary.");
+			System.out.println("Please try again.");
+			System.out.print("Word #2:  "); 
 			word2 = sc.nextLine();		
 			word2.toLowerCase();
 		}
