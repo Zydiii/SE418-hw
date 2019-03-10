@@ -7,8 +7,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Dictionary {
-	
-	public Set<String> readFile() {
+	static Set<String> dic = readFile();
+	public static Set<String> readFile() {
 		FileInputStream fis = null;
 		InputStreamReader isr = null;
 		BufferedReader br = null;

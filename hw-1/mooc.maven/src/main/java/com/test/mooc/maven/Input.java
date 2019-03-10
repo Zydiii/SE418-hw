@@ -10,6 +10,7 @@ public class Input{
 		System.out.println("Please enter two words that are of the same length but not as the same.\n");
 		while(true) {
 			System.out.println("Do you wanna play it? (Enter y or n)");
+			@SuppressWarnings("resource")
 			Scanner sc = new Scanner(System.in); 
 	        String decision = sc.nextLine(); 
 	        if (decision.equals("n")) {

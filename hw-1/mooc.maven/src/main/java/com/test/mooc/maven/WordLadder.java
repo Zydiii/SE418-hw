@@ -30,6 +30,7 @@ public class WordLadder{
 					change_word = new_word;
 					if (Dictionary.check(change_word, dic)==1 && Dictionary.check(change_word, pre_words)==0)
 					{
+						@SuppressWarnings("unchecked")
 						Stack<String> _new = (Stack<String>) _last.clone();
 						_new.push(change_word);
 						ladder.offer(_new);

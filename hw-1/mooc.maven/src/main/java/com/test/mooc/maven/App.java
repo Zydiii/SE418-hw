@@ -7,8 +7,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        Dictionary dic = new Dictionary();
-        Set<String> book = dic.readFile();
+        Set<String> book = Dictionary.dic;
         Input.get(book);
     }
 }
