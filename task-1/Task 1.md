@@ -52,6 +52,15 @@ SJTU takes large CPU. Script and Style Sheet take a large part of CPU.
 
 SJTU has long blue line. It means that it will spend a long time to search. But the waiting time is short.
 
+- Events
+
+Let's pay attention to the events of every page(they're from SJTU, MOOC and TaoBao):
+
+<img src="event1.jpg">
+<img src="event2.jpg">
+<img src="event3.jpg">
+
+From the images, we see that *DCL*(DOMContentLoaded) spends quite a long time. SO DCL is one the main bottleneck of our page.
 
 
 
