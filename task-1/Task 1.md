@@ -62,9 +62,18 @@ Let's pay attention to the events of every page(they're from SJTU, MOOC and TaoB
 
 From the images, we see that *DCL*(DOMContentLoaded) spends quite a long time. SO DCL is one the main bottleneck of our page.
 
-
-
 ### Carry out optimization solution
 
+- Rendering
 
+We can see that the long red line of FPS in SJTU manages quite a lot functions. It shows that the rendering process of SJTU chooses to render a large part of things at the same time.  
 
+From the other pages, we can see that they do good at layering, each part won't take long and remaining part can render after that during a relatively short time.
+
+Thus, what we can optimize is using layering. Partition each events will help us do better when rendring.
+
+- Loading
+
+The contents of SJTU is too much. And images take a main part, which make it harder to load the whole page. 
+
+Thus, reduce contents in the home page, make proper menu instead. Or we can do like TaoBao that doesn't load everything in the main page, but when pulling down load the remaining content.
