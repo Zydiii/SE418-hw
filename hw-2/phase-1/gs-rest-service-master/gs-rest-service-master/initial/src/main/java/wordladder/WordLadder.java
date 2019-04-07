@@ -7,6 +7,32 @@ public class WordLadder {
     private Stack<String> words;
     private String error = "";
 
+    public String getWord1() {
+        return word1;
+    }
+    public void setWord1(String word1) {
+        this.word1 = word1;
+    }
+    public String getWord2() {
+        return word2;
+    }
+    public void setWord2(String word2) {
+        this.word2 = word2;
+    }
+    public Stack<String> getWords() {
+        return words;
+    }
+    public void setWords(Stack<String> words) {
+        this.words = words;
+    }
+    public String getError() {
+        return error;
+    }
+    public void setError(String error) {
+        this.error = error;
+    }
+
+    WordLadder() {}
     WordLadder(String word1, String word2, Set<String> wordSet) {
         this.word1 = word1;
         this.word2 = word2;
@@ -17,10 +43,10 @@ public class WordLadder {
 
         this.words = ladder(this.word1, this.word2, wordSet);
     }
-    
+
     private int wordcheck(String word1, String word2, Set<String> wordSet) {
 
-         if (word1.equals(word2)) {
+        if (word1.equals(word2)) {
             this.error = "Word1 and word2 are the same, please enter two different words.";
             return 1;
         }
@@ -60,7 +86,7 @@ public class WordLadder {
                     String change_word = pre;
                     String new_word = change_word.substring(0, i) + j + change_word.substring(i + 1, word1.length());
                     change_word = new_word;
-                    if (wordSet.contains(change_word) && !pre_words.contains(change_word) ) {
+                    if (wordSet.contains(change_word) && !pre_words.contains(change_word)) {
                         @SuppressWarnings("unchecked")
                         Stack<String> _new = (Stack<String>) _last.clone();
                         _new.push(change_word);
@@ -81,19 +107,4 @@ public class WordLadder {
         }
     }
 
-    public String getStart() {
-        return this.word1;
-    }
-
-    public String getEnd() {
-        return this.word2;
-    }
-
-    public String geterror() {
-        return this.error;
-    }
-
-    public Stack<String> getwords() {
-        return this.words;
-    }
 }
