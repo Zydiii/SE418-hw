@@ -3,10 +3,17 @@ package wordladder;
 import java.util.*;
 
 public class WordLadder {
+    private long id;
     private String word1, word2;
     private Stack<String> words;
     private String error = "";
 
+    public  void setId(long id){
+        this.id = id;
+    }
+    public long getId() {
+        return id;
+    }
     public String getWord1() {
         return word1;
     }
@@ -33,7 +40,8 @@ public class WordLadder {
     }
 
     WordLadder() {}
-    WordLadder(String word1, String word2, Set<String> wordSet) {
+    WordLadder(String word1, String word2, Set<String> wordSet, long id) {
+        this.id = id;
         this.word1 = word1;
         this.word2 = word2;
 

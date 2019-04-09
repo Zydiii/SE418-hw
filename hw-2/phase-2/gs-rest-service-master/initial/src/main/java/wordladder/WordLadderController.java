@@ -5,10 +5,12 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -16,9 +18,12 @@ public class WordLadderController {
 
     private Set<String> dict = loadDict("static/dictionary.txt");
 
+    private final AtomicLong counter = new AtomicLong();
+
     @RequestMapping("/WordLadder")
+    @ResponseBody
     public WordLadder wordladder(@RequestParam(value="word1", defaultValue="happy") String word1, @RequestParam(value="word2", defaultValue="money") String word2) {
-        return new WordLadder(word1, word2, dict);
+        return new WordLadder(word1, word2, dict, counter.incrementAndGet());
     }
 
     static Set<String> loadDict(String path) {
