@@ -1,4 +1,4 @@
-package wordladder;
+package hello;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -20,7 +20,7 @@ public class WordLadderController {
 
     private final AtomicLong counter = new AtomicLong();
 
-    @RequestMapping("/WordLadder")
+    @RequestMapping(value = "/WordLadder")
     @ResponseBody
     public WordLadder wordladder(@RequestParam(value="word1", defaultValue="happy") String word1, @RequestParam(value="word2", defaultValue="money") String word2) {
         return new WordLadder(word1, word2, dict, counter.incrementAndGet());

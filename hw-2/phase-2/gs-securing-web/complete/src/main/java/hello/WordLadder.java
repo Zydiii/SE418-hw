@@ -1,4 +1,4 @@
-package wordladder;
+package hello;
 
 import java.util.*;
 
