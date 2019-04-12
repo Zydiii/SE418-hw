@@ -20,7 +20,7 @@ public class WordLadderController {
 
     private final AtomicLong counter = new AtomicLong();
 
-    @RequestMapping(value = "/WordLadder")
+    @RequestMapping("/WordLadder/Search")
     @ResponseBody
     public WordLadder wordladder(@RequestParam(value="word1", defaultValue="happy") String word1, @RequestParam(value="word2", defaultValue="money") String word2) {
         return new WordLadder(word1, word2, dict, counter.incrementAndGet());
