@@ -15,11 +15,13 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        super.configure(http);
+        http.csrf().disable();
         http
             .authorizeRequests()
-                .antMatchers("/WordLadder/Search").permitAll()
-                .antMatchers("/actuator/**").permitAll()
-                .anyRequest().authenticated()
+                .antMatchers("/WordLadder/Search").authenticated()
+                .antMatchers("/actuator/**").authenticated()
+                //.anyRequest().authenticated()
                 .and()
             .formLogin()
                 .loginProcessingUrl("/login")

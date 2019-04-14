@@ -45,22 +45,9 @@ public class ApplicationTests {
     }
 
     @Test
-    public void accessUnsecuredResourceThenOk() throws Exception {
-        mockMvc.perform(get("/"))
-            .andExpect(status().isOk());
-    }
-
-    @Test
-    public void accessSecuredResourceUnauthenticatedThenRedirectsToLogin() throws Exception {
-        mockMvc.perform(get("/hello"))
-            .andExpect(status().is3xxRedirection())
-            .andExpect(redirectedUrlPattern("**/login"));
-    }
-
-    @Test
     @WithMockUser
     public void accessSecuredResourceAuthenticatedThenOk() throws Exception {
-        mockMvc.perform(get("/hello"))
+        mockMvc.perform(get("/actuator"))
                 .andExpect(status().isOk());
     }
 }
