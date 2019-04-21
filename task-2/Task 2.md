@@ -22,7 +22,7 @@ Prometheus的高峰是因为启动app时消耗了比较多的资源，在没有�
 
 得到了如下的结果：
 
-<img src="2.jpg">
+<img src="2.JPG">
 
 <img src="1.png">
 
@@ -30,21 +30,21 @@ Prometheus的高峰是因为启动app时消耗了比较多的资源，在没有�
 
 这次的测试设置如图：
 
-<img src="3.jpg">
+<img src="3.JPG">
 
 得到下面的结果：
 
-<img src="4.jpg">
+<img src="4.JPG">
 
 <img src="2.png">
 
 可以看到，cpu和内存利用率峰值有所提高，但并不是很高，于是我再一次加大了请求数量。
 
-<img src="5.jpg">
+<img src="5.JPG">
 
 这次的结果如图：
 
-<img src="6.jpg">
+<img src="6.JPG">
 
 <img src="3.png">
 
