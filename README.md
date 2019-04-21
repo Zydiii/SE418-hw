@@ -23,3 +23,5 @@ Assignments of SE418.
 ## Task
 
 - Task-1: How to use **F12**
+
+- Task-2: Find the resources consumption of  *REST* service
