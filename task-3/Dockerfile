@@ -1,4 +1,5 @@
 FROM ubuntu
+
 MAINTAINER Zydiii
 
 ADD gs-securing-web-0.1.0.jar /HW/WordLadder/WordLadder.jar

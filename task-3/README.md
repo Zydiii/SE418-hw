@@ -10,7 +10,7 @@
     - **run** Run a command in a new container
     - **exec** Run a command in a running container
 - Deliverables
-  - Docker image, pushed to dockerhub
+  - Docker image, pushed to dockerhub (https://hub.docker.com/r/zydiii/wordladder)
   - Docker file & Readme.md
 
 ## How to use this image
