@@ -44,7 +44,7 @@ First, you can visit localhost:80/login with JSON
 ```
 to get the **JWT token**. This token can be valid for just one hour.
 
-<img src = "./images/login.png">
+<img src = "./images/login.png"> 
 
 Then, visit localhost:88/WordLadder/Search with **Bearer Token**: the JWT token returned after you successfully login.
 
