@@ -9,7 +9,7 @@
   - Ignore the authentication workflow
 
 - Dockerized the two microservices
-  - Dockerhub
+  - Dockerhub: https://hub.docker.com/r/zydiii/wordladder
   - Docker file & readme
 
 ## How to use this image
