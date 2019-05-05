@@ -1,0 +1,8 @@
+FROM openjdk:11
+MAINTAINER Zydiii
+
+ADD gs-securing-web-0.1.0.jar /HW/WordLadder/WordLadder2.jar
+
+EXPOSE 8088
+
+CMD "java" "-jar" "/HW/WordLadder/WordLadder2.jar"

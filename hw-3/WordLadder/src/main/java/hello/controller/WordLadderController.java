@@ -1,8 +1,6 @@
 package hello.controller;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import java.io.*;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.concurrent.atomic.AtomicLong;
@@ -33,16 +31,17 @@ public class WordLadderController {
         try {
             System.out.println("loading");
             org.springframework.core.io.Resource resource = new ClassPathResource(path);
-            File dictFile = resource.getFile();
+            InputStream file = resource.getInputStream();
+            /*File dictFile = resource.getFile();
 
             if (!dictFile.exists()) {
                 System.out.println("dict not exits");
                 return new TreeSet<>();
             }
 
-            System.out.println("dict exits");
+            System.out.println("dict exits");*/
 
-            BufferedReader reader = new BufferedReader(new FileReader(dictFile));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(file));
             String tempString;
 
             while ((tempString = reader.readLine()) != null) {
