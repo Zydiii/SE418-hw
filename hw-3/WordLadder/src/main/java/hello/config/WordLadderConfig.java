@@ -12,7 +12,7 @@ public class WordLadderConfig {
     public FilterRegistrationBean jwtFilter() {
         final FilterRegistrationBean registrationBean = new FilterRegistrationBean();
         registrationBean.setFilter(new WordLadderFilter());
-        registrationBean.addUrlPatterns("/word_ladder/*");
+        registrationBean.addUrlPatterns("/WordLadder/*");
 
         return registrationBean;
     }

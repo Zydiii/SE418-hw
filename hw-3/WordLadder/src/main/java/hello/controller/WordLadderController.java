@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+@RequestMapping("/WordLadder")
 @RestController
 public class WordLadderController {
 
@@ -21,7 +22,7 @@ public class WordLadderController {
 
     private final AtomicLong counter = new AtomicLong();
 
-    @RequestMapping("/WordLadder/Search")
+    @RequestMapping("/Search")
     @ResponseBody
     public WordLadder wordladder(@RequestParam(value="word1", defaultValue="happy") String word1, @RequestParam(value="word2", defaultValue="money") String word2) {
         return new WordLadder(word1, word2, dict, counter.incrementAndGet());
