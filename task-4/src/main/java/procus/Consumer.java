@@ -4,25 +4,26 @@ import java.util.Random;
 import java.util.concurrent.BlockingQueue;
 
 public class Consumer implements Runnable{
-    private BlockingQueue<Task> queue;
-
-    public Consumer(BlockingQueue queue){
-        this.queue = queue;
-    }
-
+    private Container container;
     //随机对象
     private static Random r = new Random();
+
+    public Consumer(Container container){
+        this.container = container;
+    }
 
     public void run() {
         while(true){
             try {
                 //获取数据
-                Task data = this.queue.take();
+                Task task;
                 //进行数据处理。休眠0 - 1000毫秒模拟耗时
                 Thread.sleep(r.nextInt(1000));
-                System.out.println("当前消费线程：" +
-                        Thread.currentThread().getName() +
-                        "， 消费成功，消费数据为id: " + data.getId());
+                if ((task = container.getTask()) != null) {
+                    System.out.println(Thread.currentThread().getId() + "get task " + task.getId());
+                } else {
+                    System.out.println(Thread.currentThread().getId() + "failed to get any task");
+                }
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
