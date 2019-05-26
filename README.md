@@ -19,9 +19,24 @@ Assignments of SE418.
     ​           Spring Actuator
 
     ​           Spring Security
+- HW-3:
+
+  - Split your REST Service of Homework II into two microserices
+  - Login
+  - Function
+    - WordLadder
+  - Ignore the authentication workflow
+
+- Dockerized the two microservices
+  - Dockerhub: https://hub.docker.com/r/zydiii/wordladder
+  - Docker file & readme
 
 ## Task
 
 - Task-1: How to use **F12**
 
 - Task-2: Find the resources consumption of  *REST* service
+
+- Tsk-3: Dockerized your REST service of Homework II
+
+- Task-4: Implement a container in Java
