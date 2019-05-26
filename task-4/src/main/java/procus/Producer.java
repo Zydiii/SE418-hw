@@ -25,13 +25,13 @@ public class Producer implements Runnable{
                 //获取的数据进行累计
                 int id = count.incrementAndGet();
                 if (container.addTask(id)) {
-                    System.out.println(Thread.currentThread().getId() + "adding task " + id);
+                    System.out.println("Thread " + Thread.currentThread().getId() + " adding task " + id);
                 }
                 else{
                     stop();
                 }
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            } catch (Exception e) {
+                Thread.currentThread().interrupt();
             }
         }
     }

@@ -20,12 +20,12 @@ public class Consumer implements Runnable{
                 //进行数据处理。休眠0 - 1000毫秒模拟耗时
                 Thread.sleep(r.nextInt(1000));
                 if ((task = container.getTask()) != null) {
-                    System.out.println(Thread.currentThread().getId() + "get task " + task.getId());
+                    System.out.println("Thread " + Thread.currentThread().getId() + " get task " + task.getId());
                 } else {
-                    System.out.println(Thread.currentThread().getId() + "failed to get any task");
+                    System.out.println("Thread " + Thread.currentThread().getId() + " failed to get any task");
                 }
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            } catch (Exception e) {
+                Thread.currentThread().interrupt();
             }
         }
     }
