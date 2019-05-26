@@ -27,7 +27,7 @@ public class Producer implements Runnable{
                 //获取的数据进行累计...
                 int id = count.incrementAndGet();
                 //比如通过一个getData方法获取了
-                Task data = new Task(Integer.toString(id), System.currentTimeMillis());
+                Task data = new Task(id, System.currentTimeMillis());
                 System.out.println("当前线程:" +
                         Thread.currentThread().getName() +
                         ", 获取了数据，id为:" + id +
