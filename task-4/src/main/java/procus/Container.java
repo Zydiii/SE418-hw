@@ -39,7 +39,7 @@ public class Container {
         }
         nums.incrementAndGet();
         queues.addLast(new Task(ID, System.currentTimeMillis()));
-        System.out.println("Add request " + ID);
+        System.out.println("Add task " + ID);
         return true;
     }
 
