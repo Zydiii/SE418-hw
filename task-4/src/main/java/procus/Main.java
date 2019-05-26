@@ -9,19 +9,17 @@ public class Main{
 
     public static void main(String[] args) throws Exception {
         //内存缓冲区
-        BlockingQueue<Task> queue = new LinkedBlockingQueue<Task>(10);
+        Container container = new Container(); //Container
         //生产者
-        Producer p1 = new Producer(queue);
-
-        Producer p2 = new Producer(queue);
-        Producer p3 = new Producer(queue);
+        Producer p1 = new Producer(container);
+        Producer p2 = new Producer(container);
+        Producer p3 = new Producer(container);
         //消费者
-        Consumer c1 = new Consumer(queue);
-        Consumer c2 = new Consumer(queue);
-        Consumer c3 = new Consumer(queue);
+        Consumer c1 = new Consumer(container);
+        Consumer c2 = new Consumer(container);
+        Consumer c3 = new Consumer(container);
         //创建线程池运行,这是一个缓存的线程池，可以创建无穷大的线程，
         //没有任务的时候不创建线程。空闲线程存活时间为60s（默认值）
-
         ExecutorService cachePool = Executors.newCachedThreadPool();
         cachePool.execute(p1);
         cachePool.execute(p2);
@@ -43,9 +41,5 @@ public class Main{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        //        cachePool.shutdown();
-        //        cachePool.shutdownNow();
-
-
     }
 }
